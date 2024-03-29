@@ -1,0 +1,73 @@
+https://github.com/ singe in 2024/03/29
+ID tatsumiking@gmail.com
+PW imts9876A
+
+
+
+初期設定
+git config --global user.name "tatsumiking"
+git config --global user.email "tatsumiking@gmail.com"
+git config --global init.defaultBranch main
+
+設定尾確認
+git config user.name
+git config user.email
+git config init.defaultBranch
+
+初期化　Git対象のフォルダーに移動する
+git init
+「test01.txt」ファイルを編集保存し
+git add test01.txt
+git commit -m "test01を追加"
+git add test02.txt
+git commit -m "test02を追加" (test01.txt test02.txt)
+git log --oneline // 確認
+
+git branch // ブランチを確認
+git switch -c submain  // 「submain」ブランチを作成
+git add test03.txt
+git commit -m "submainにtest03を追加" (test01.txt test02.txt test03.txt)
+git log --oneline --all // ブランチを全て表示
+
+git switch main // mainに切り替え (test01.txt test02.txt)
+git add test04.txt
+git commit -m "test04を追加" // (test01.txt test02.txt test04.txt)
+git merge submain --no-ff --no-edit // mainにsubmainを統合
+
+git add . // 対象をフォルダーに変更
+git commit -m "test01.txtをgittest01.txtに変更"
+
+リモートにサインインして新しいリポジトリを作成
+
+
+git remote add origin https://github.com/tatsumiking/gittest.git
+git push -u origin main
+
+git add . // 対象をフォルダーに変更
+git commit -m "test05を追加"
+git push -u origin submain2 // リモートにsubmain2ブランチを作成しプッシュする
+
+git clone https://github.com/tatsumiking/gittest.git
+
+
+
+
+
+
+
+
+…or create a new repository on the command line
+echo "# gittest" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/tatsumiking/gittest.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/tatsumiking/gittest.git
+git branch -M main
+git push -u origin main
+
+
